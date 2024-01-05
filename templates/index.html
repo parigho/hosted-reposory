@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alturist analysis</title>
+
+    <!-- Add your custom CSS styles here -->
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px; /* Add padding to the body to create space around the content */
+        }
+
+        header {
+            padding: 10px;
+            text-align: right;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            color: white;
+            margin-bottom: 20px; /* Add margin at the bottom of the table */
+        }
+
+        th, td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3468b5;
+        }
+
+        tr:nth-child(even) {
+            background-color: #555;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #333;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with company logo -->
+    <header>
+        <img src="https://www.altruistindia.com/wp-content/uploads/2020/10/altruist.png" width="100" height="100">
+    </header>
+    <h2>--------------------------------------------------------------------------------------------------</h2>
+    <h2>Campaign summary</h2>
+    <h2>--------------------------------------------------------------------------------------------------</h2>
+
+    <!-- Table from the second script -->
+    {{ result2.to_html() | safe }}
+
+    <h2>--------------------------------------------------------------------------------------------------</h2>
+    <h2>Campaign wise divdent</h2>
+    <h2>--------------------------------------------------------------------------------------------------</h2>
+
+    <!-- Table from the first script -->
+    {{ result1 | safe }}
+    <h2>--------------------------------------------------------------------------------------------------</h2>
+    <h2>Agent name-wise divdent</h2>
+    <h2>--------------------------------------------------------------------------------------------------</h2>
+
+    <!-- Table from the third script (result_df) -->
+    {{ result_df.to_html() | safe }}
+</body>
+</html>
